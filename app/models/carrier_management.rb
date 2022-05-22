@@ -1,0 +1,2 @@
+class CarrierManagement < ApplicationRecord
+end
