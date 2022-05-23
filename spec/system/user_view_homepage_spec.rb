@@ -8,6 +8,6 @@ describe 'Usuário Visita Tela Inicial' do
             visit(root_path)
         #Assert
             expect(page).to have_content('Sistema de Entrega')
-            expect(page).not_to have_content('AA')
+            expect(page).not_to have_content('Erro')
     end
 end

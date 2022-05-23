@@ -187,6 +187,8 @@ GEM
     timeout (0.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    validates_cpf_cnpj (0.2.0)
+      activemodel (>= 3.0.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -206,6 +208,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   tzinfo-data
+  validates_cpf_cnpj
 
 RUBY VERSION
    ruby 3.0.0p0

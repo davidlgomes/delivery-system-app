@@ -1,0 +1,11 @@
+<%=link_to 'Voltar', root_path%></br></br>
+<h1><%=@carrier_management.fancy_name%></br></h1>
+<%if @carrier_management!=nil%>
+    Nome Fantasia: <%=@carrier_management.fancy_name%></br>
+    Razão Social: <%=@carrier_management.social_reason%></br>
+    Domínio de e-mail: <%=@carrier_management.domain_of_emails%></br>
+    CNPJ: <%=@carrier_management.cnpj%></br>
+    Endereço para Faturamento: <%=@carrier_management.billing_address%></br>
+<%end%>
+<%=link_to "Editar", edit_carrier_management_path(@carrier_management.id)%>
+<%=button_to "Apagar",  carrier_management_path(@carrier_management.id), method: :delete%>
