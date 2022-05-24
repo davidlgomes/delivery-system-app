@@ -6,6 +6,7 @@
     Domínio de e-mail: <%=@carrier_management.domain_of_emails%></br>
     CNPJ: <%=@carrier_management.cnpj%></br>
     Endereço para Faturamento: <%=@carrier_management.billing_address%></br>
+    Status: <%=@carrier_management.status%></br>
 <%end%>
 <%=link_to "Editar", edit_carrier_management_path(@carrier_management.id)%>
 <%=button_to "Apagar",  carrier_management_path(@carrier_management.id), method: :delete%>

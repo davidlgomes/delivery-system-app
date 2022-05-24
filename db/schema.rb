@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_22_214449) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_013648) do
   create_table "carrier_managements", force: :cascade do |t|
     t.string "fancy_name"
     t.string "social_reason"
     t.string "domain_of_emails"
     t.string "cnpj"
     t.string "billing_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "carrier_situation"
+    t.integer "status", default: 0
+  end
+
+  create_table "vehicle_deliveries", force: :cascade do |t|
+    t.string "vehicle_plate"
+    t.string "brand_vehicle"
+    t.string "model_vehicle"
+    t.string "year_of_manucfature"
+    t.string "maximum_load_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

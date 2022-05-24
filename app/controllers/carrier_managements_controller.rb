@@ -9,7 +9,7 @@ class CarrierManagementsController < ApplicationController
 
     def create
         carrier_management_params=params.require(:carrier_management).permit(:fancy_name, :social_reason, 
-                                                :domain_of_emails, :cnpj, :billing_address) 
+                                                :domain_of_emails, :cnpj, :billing_address, :status) 
         @carrier_management = CarrierManagement.new(carrier_management_params)
         if @carrier_management.save()
             redirect_to root_path, notice: 'Transportadora Cadastrada com Sucesso!'
@@ -22,7 +22,7 @@ class CarrierManagementsController < ApplicationController
     
     def update
         carrier_management_params=params.require(:carrier_management).permit(:fancy_name, :social_reason, 
-            :domain_of_emails, :cnpj, :billing_address) 
+            :domain_of_emails, :cnpj, :billing_address, :status) 
         if @carrier_management.update(carrier_management_params)
             redirect_to carrier_management_path(@carrier_management.id), notice:'Transportadora atualizada com sucesso'
         else

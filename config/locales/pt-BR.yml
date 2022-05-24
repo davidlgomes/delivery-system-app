@@ -8,5 +8,8 @@ pt-BR:
         social_reason: "Razão Social"
         domain_of_emails: "Domínio de E-mails"
         cnpj: "CNPJ"
+        Cnpj: "CNPJ"
         billing_address: "Endereço para Faturamento"
+        Active: "Ativo"
+        Inactive: "Inativo" 
         

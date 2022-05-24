@@ -1,0 +1,2 @@
+class VehicleDelivery < ApplicationRecord
+end

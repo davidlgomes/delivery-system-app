@@ -4,7 +4,7 @@ describe 'Usuário remove um galpão' do
     it 'com sucesso' do
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
-            cnpj: '76535764000143')
+            cnpj: '76535764000143', status: 'active')
         visit root_path
         visit root_path
         click_on "Oi"
