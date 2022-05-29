@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'Usuário remove um galpão' do
     it 'com sucesso' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')

@@ -1,5 +1,6 @@
 class CarrierManagementsController < ApplicationController
     before_action :set_carrier_management, only:[:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
     def show
     
     end

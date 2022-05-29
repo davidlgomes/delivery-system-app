@@ -1,6 +1,8 @@
 require 'rails_helper'
 describe 'Usuário edita uma Transportadora' do 
     it 'a partir da página Específica' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -16,6 +18,8 @@ describe 'Usuário edita uma Transportadora' do
         
     end
     it 'com Sucesso' do 
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -39,6 +43,8 @@ describe 'Usuário edita uma Transportadora' do
             expect(page).to have_content('Status: active')
     end
     it 'e mantém os campos obrigatórios' do 
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')

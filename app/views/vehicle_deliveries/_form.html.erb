@@ -1,0 +1,30 @@
+<%= form_with(model: @vehicle_delivery) do |formulario|%>
+    <div>
+        <%=formulario.label :vehicle_plate, "Placa do Veículo"%></br>
+        <%=formulario.text_field :vehicle_plate%>
+    </div>
+    <div>
+        <%=formulario.label :brand_vehicle, "Marca"%></br>
+        <%=formulario.text_field :brand_vehicle%>
+    </div>
+    <div>
+        <%=formulario.label :model_vehicle, "Modelo"%></br>
+        <%=formulario.text_field :model_vehicle%>
+    </div>
+    <div>
+        <%=formulario.label :year_of_manucfature, "Ano de Fabricação"%></br>
+        <%=formulario.text_field :year_of_manucfature%>
+    </div>
+    <div>
+        <%=formulario.label :maximum_load_capacity, "Capacidade Máxima de Carga"%></br>
+        <%=formulario.text_field :maximum_load_capacity%>
+    </div>
+    <div>
+        <%=formulario.label :carrier_management_id, "Transportadora"%></br>
+        <%=formulario.collection_select :carrier_management_id, @carrier_managements, :id, :fancy_name%>
+    </div>
+    </br>
+    <div>
+        <%=formulario.submit "Enviar"%>
+    </div>
+<%end%>
