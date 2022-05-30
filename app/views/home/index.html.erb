@@ -1,7 +1,9 @@
 Acessado em: <%=I18n.localize(Date.today)%>
 <h2>Transportadoras</h2>
-<%=link_to('Cadastrar Transportadora', new_carrier_management_path)%></br>
-<%=link_to('Veículo', vehicle_deliveries_path)%></br>
+<%=link_to('Cadastrar Transportadora', new_carrier_management_path)%> |
+<%=link_to('Veículo', vehicle_deliveries_path)%> |
+<%=link_to('Preços', delivery_prices_path)%> |
+</br></br>
 <%if @carrier_managements.empty?%>
     <p>Não existem galpões cadastrados</p>
 <%end%>

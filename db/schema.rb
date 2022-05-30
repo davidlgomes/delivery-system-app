@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_27_195129) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_29_220423) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,6 +35,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_195129) do
     t.integer "status", default: 0
   end
 
+  create_table "delivery_prices", force: :cascade do |t|
+    t.float "volume"
+    t.float "weight"
+    t.float "km_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.float "initial_price"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,11 +62,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_195129) do
     t.string "vehicle_plate"
     t.string "brand_vehicle"
     t.string "model_vehicle"
-    t.string "year_of_manucfature"
     t.string "maximum_load_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "carrier_management_id", null: false
+    t.integer "year_of_manufacture"
     t.index ["carrier_management_id"], name: "index_vehicle_deliveries_on_carrier_management_id"
   end
 

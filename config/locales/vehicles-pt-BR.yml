@@ -6,7 +6,8 @@ pt-BR:
       vehicle_delivery:
         vehicle_plate: "Placa do Veículo"
         brand_vehicle: "Marca"
-        model_vehicle: "Domínio de E-mails"
+        model_vehicle: "Modelo"
         year_of_manufacture: "Ano de Fabricação"
         maximum_load_capacity: "Capacidade Máxima de Carga"
+        carrier_management_id: "Transportadora"
         
