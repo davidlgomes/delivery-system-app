@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'Usuário Cadastra um Preço' do
     it 'com sucesso' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -18,6 +20,8 @@ describe 'Usuário Cadastra um Preço' do
  
     end
     it 'Com todos os dados em branco' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -33,6 +37,8 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Prazo' 
     end
     it 'com apenas Distância Mínima em branco' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -48,6 +54,8 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Prazo' 
     end
     it 'com apenas Distância Máxima em branco' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -63,6 +71,8 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Prazo' 
     end
     it 'com apenas Dias Mínimo em branco' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -78,6 +88,8 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Prazo' 
     end
     it 'com apenas Dias entrega por Km em branco' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')

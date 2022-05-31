@@ -1,4 +1,5 @@
 class DeliveryPricesController < ApplicationController
+    before_action :authenticate_user!
     def index
         @delivery_prices = DeliveryPrice.all
     end

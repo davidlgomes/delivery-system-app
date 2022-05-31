@@ -2,12 +2,16 @@ require 'rails_helper'
 
 describe 'Usuario vê frota de veículo de uma transportadora' do
     it 'a partir do menu' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         visit root_path
         click_on 'Veículo'
 
         expect(current_path).to eq(vehicle_deliveries_path)
     end
     it 'com sucesso' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                  domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -23,6 +27,8 @@ describe 'Usuario vê frota de veículo de uma transportadora' do
         expect(page).to have_link(segundo_veiculo.vehicle_plate)  
     end
     it 'com sucesso sem nada cadastrado' do
+        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
+        login_as(usuario)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                  domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
