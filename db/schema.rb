@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_29_220423) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_122458) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,14 +35,39 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_29_220423) do
     t.integer "status", default: 0
   end
 
+  create_table "deadlines", force: :cascade do |t|
+    t.integer "days_delivery"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "minimum_of_days"
+    t.float "minimum_distance"
+    t.float "maximum_distance"
+    t.integer "carrier_management_id", null: false
+    t.index ["carrier_management_id"], name: "index_deadlines_on_carrier_management_id"
+  end
+
   create_table "delivery_prices", force: :cascade do |t|
-    t.float "volume"
-    t.float "weight"
     t.float "km_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.float "initial_price"
+    t.float "smaller_volume"
+    t.float "larger_volume"
+    t.float "larger_weight"
+    t.float "smaller_weight"
+    t.integer "carrier_management_id", default: 0, null: false
+    t.index ["carrier_management_id"], name: "index_delivery_prices_on_carrier_management_id"
+  end
+
+  create_table "price_queries", force: :cascade do |t|
+    t.float "volume_query"
+    t.float "weight_query"
+    t.float "distance_query"
+    t.float "delivery_price_query"
+    t.string "carrier_disponible"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,5 +95,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_29_220423) do
     t.index ["carrier_management_id"], name: "index_vehicle_deliveries_on_carrier_management_id"
   end
 
+  add_foreign_key "deadlines", "carrier_managements"
+  add_foreign_key "delivery_prices", "carrier_managements"
   add_foreign_key "vehicle_deliveries", "carrier_managements"
 end

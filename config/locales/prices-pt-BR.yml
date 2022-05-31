@@ -5,8 +5,10 @@ pt-BR:
     attributes:
       delivery_price:
         name: "Nome da Oferta"
-        volume: "Volume"
-        weight: "Peso"
+        smaller_volume: "Volume Menor"
+        larger_volume: "Volume Maior"
+        smaller_weight: "Peso Menor"
+        larger_weight: "Peso Maior"
         km_price: "Preço por Km"
         initial_price: "Preço Inicial"
         carrier_management_id: "Transportadora"

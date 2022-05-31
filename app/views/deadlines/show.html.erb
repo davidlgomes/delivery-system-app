@@ -1,0 +1,8 @@
+<h2>Prazos</h2>
+<%=link_to('Voltar', deadlines_path)%>
+<%=link_to "Editar", edit_deadline_path(@deadline.id)%>
+<%=button_to "Apagar", deadline_path(@deadline.id), method: :delete%></br>
+
+Distância: <%=@deadline.minimum_distance %> até <%=@deadline.maximum_distance %></br>
+Prazo: <%=@deadline.days_delivery%></br>
+Mínimo de dias: <%=@deadline.minimum_of_days %></br>

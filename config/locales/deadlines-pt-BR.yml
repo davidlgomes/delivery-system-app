@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models: 
+      deadline: Prazo
+    attributes:
+      deadline:
+        minimum_distance: "Distância Mínima"
+        maximum_distance: "Distância Máxima"
+        minimum_of_days: "Dias Mínimo"
+        days_delivery: "Dias entrega"
+        carrier_management: "Transportadora"
+        carrier_management_id: "Transportadora"
+        

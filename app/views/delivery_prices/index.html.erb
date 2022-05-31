@@ -2,6 +2,4 @@
 <%=link_to('Cadastrar Preços', new_delivery_price_path)%></br>
 <%@delivery_prices.each do |price|%>
 <%=link_to price.name, delivery_price_path(price.id)%></br>
-<%=link_to "Editar", edit_delivery_price_path(price.id)%>
-<%=button_to "Apagar",  delivery_price_path(price.id), method: :delete%>
 <%end%>

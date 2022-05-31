@@ -3,14 +3,19 @@ class DeliveryPricesController < ApplicationController
         @delivery_prices = DeliveryPrice.all
     end
     def new
+        @carrier_managements=CarrierManagement.all
         @delivery_price = DeliveryPrice.new
     end
     def edit
+        @carrier_managements=CarrierManagement.all
         @delivery_price=DeliveryPrice.find(params[:id])
     end
     def create
-        @delivery_price_params = params.require(:delivery_price).permit(:volume, :weight, :km_price, :name, :initial_price)
-        @delivery_price = DeliveryPrice.new(@delivery_price_params)
+        @carrier_managements=CarrierManagement.all
+        delivery_price_params=params.require(:delivery_price).permit(:smaller_volume, :larger_volume, :larger_weight, 
+                                                                     :smaller_weight, :km_price, :name, :initial_price, 
+                                                                     :carrier_management_id)
+        @delivery_price = DeliveryPrice.new(delivery_price_params)
         if @delivery_price.save()
             redirect_to @delivery_price, notice: 'Preço cadastrado com sucesso'
         else
@@ -19,10 +24,13 @@ class DeliveryPricesController < ApplicationController
         end
     end
     def update
+        @carrier_managements=CarrierManagement.all
         @delivery_price=DeliveryPrice.find(params[:id])
-        price_delivery_params=params.require(:delivery_price).permit(:volume, :weight, :km_price, :name, :initial_price)
-        @delivery_price = DeliveryPrice.new(@delivery_price_params)
-        if @delivery_price.update(price_delivery_params)
+        delivery_price_params=params.require(:delivery_price).permit(:smaller_volume, :larger_volume, :larger_weight, 
+                                                                     :smaller_weight, :km_price, :name, :initial_price,
+                                                                     :carrier_management_id)
+        @delivery_price = DeliveryPrice.new(delivery_price_params)
+        if @delivery_price.update(delivery_price_params)
             redirect_to @delivery_price, notice:'Preço Editado com sucesso'
         else
             flash.now[:notice]='Não foi possível Editar o Preço'
