@@ -1,8 +1,8 @@
 require 'rails_helper'
 describe 'Usuário edita um preço' do 
     it 'com sucesso' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -30,8 +30,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Preço Inicial: 10' 
     end
     it 'com Nome da Oferta em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -54,8 +54,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço' 
     end
     it 'com Volume Maior em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -78,8 +78,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço'
     end
     it 'com Volume Menor em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -102,8 +102,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço'
     end
     it 'com Peso Maior em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -126,8 +126,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço' 
     end
     it 'com Peso Menor em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -150,8 +150,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço' 
     end
     it 'com Preço por Km em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -174,8 +174,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço' 
     end
     it 'com Preço Inicial em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -198,8 +198,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço' 
     end
     it 'com Preço Inicial em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
@@ -222,8 +222,8 @@ describe 'Usuário edita um preço' do
         expect(page).to have_content 'Não foi possível Editar o Preço' 
     end
     it 'com nome já cadastrado' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')

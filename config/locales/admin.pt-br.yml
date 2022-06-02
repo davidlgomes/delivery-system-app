@@ -1,9 +1,9 @@
 pt-BR:
   activerecord:
     models: 
-      user: Usuário
+      admin: Administrador
     attributes:
-      user:
+      admin:
         name: "Nome"
         email: "E-mail"
         password: "Senha"

@@ -1,8 +1,9 @@
 require 'rails_helper'
 describe 'Usuário edita um Veículo' do 
     it 'com sucesso' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -29,8 +30,9 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Oi' 
     end
     it 'com a placa do veículo com mais caracteres' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -51,8 +53,9 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Não foi possível Editar o Veículo' 
     end
     it 'com a placa do veículo com menos caracteres' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -73,8 +76,9 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Não foi possível Editar o Veículo' 
     end
     it 'com a placa do veículo não sendo única' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -88,8 +92,9 @@ describe 'Usuário edita um Veículo' do
         expect(teste_uniquess).to eq(false)
     end
     it 'com a placa em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -110,8 +115,9 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Não foi possível Editar o Veículo' 
     end
     it 'com a marca em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -132,8 +138,9 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Não foi possível Editar o Veículo' 
     end
     it 'com o modelo em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
@@ -154,14 +161,16 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Não foi possível Editar o Veículo' 
     end
     it 'com o ano de fabricação em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')
         primeiro_veiculo = VehicleDelivery.create!(vehicle_plate: 'LDU2009' ,brand_vehicle: 'Chevrolet' , model_vehicle: 'Corsa' ,
                                                   year_of_manufacture: '2007' , maximum_load_capacity: '300', 
                                                   carrier_management: primeiro_carrier_management)
+        
         visit root_path
         click_on 'Veículo'
         click_on 'LDU2009'
@@ -176,8 +185,9 @@ describe 'Usuário edita um Veículo' do
         expect(page).to have_content 'Não foi possível Editar o Veículo' 
     end
     it 'com a capacidade máxima de carga de fabricação em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                     domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                     cnpj: '76535764000143', status: 'active')

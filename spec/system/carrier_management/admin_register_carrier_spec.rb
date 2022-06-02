@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'Usuário cadastra uma Transportadora' do 
     it 'a partir da tela inicial' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         #Act
         visit(root_path)
         click_on('Cadastrar Transportadora')
@@ -18,8 +18,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'e com sucesso' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         #Act
         visit root_path
         click_on('Cadastrar Transportadora')
@@ -44,8 +44,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com todos os dados incompletos' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         #Act
         visit(root_path)
         click_on('Cadastrar Transportadora')
@@ -66,8 +66,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com CNPJ inválido' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         #Act
         visit(root_path)
         click_on('Cadastrar Transportadora')
@@ -85,8 +85,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com CNPJ com mais caracteres' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         #Act
         visit(root_path)
         click_on('Cadastrar Transportadora')
@@ -104,8 +104,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com CNPJ com menos caracteres' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         #Act
         visit(root_path)
         click_on('Cadastrar Transportadora')
@@ -123,8 +123,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com CNPJ já cadastrado' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                 cnpj: '76535764000143', status: 'active')
@@ -138,8 +138,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com nome fantasia já cadastrado' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                 cnpj: '76535764000143', status: 'active')
@@ -153,8 +153,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com razão social já cadastrada' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                 cnpj: '76535764000143', status: 'active')
@@ -168,8 +168,8 @@ describe 'Usuário cadastra uma Transportadora' do
     end
     it 'com domínio de email já cadastrado' do
         #Arrange
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name: 'David', email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
                                                 cnpj: '76535764000143', status: 'active')

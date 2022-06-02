@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'Usuário Cadastra um veículo' do
     it 'com sucesso' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -29,8 +29,8 @@ describe 'Usuário Cadastra um veículo' do
         expect(page).to have_content 'Oi' 
     end
     it 'Com todos os dados em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -55,8 +55,8 @@ describe 'Usuário Cadastra um veículo' do
         expect(page).to have_content 'Placa do Veículo não possui o tamanho esperado (7 caracteres)' 
     end
     it 'com apenas Placa do Veículo em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -77,8 +77,8 @@ describe 'Usuário Cadastra um veículo' do
         expect(page).to have_content 'Placa do Veículo não pode ficar em branco' 
     end
     it 'com apenas Marca em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -99,8 +99,8 @@ describe 'Usuário Cadastra um veículo' do
         expect(page).to have_content 'Marca não pode ficar em branco'
     end
     it 'com apenas Modelo em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -121,8 +121,8 @@ describe 'Usuário Cadastra um veículo' do
         expect(page).to have_content 'Modelo não pode ficar em branco' 
     end
     it 'com apenas Ano de Fabricação em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')
@@ -143,8 +143,8 @@ describe 'Usuário Cadastra um veículo' do
         expect(page).to have_content 'Ano de Fabricação não pode ficar em branco' 
     end
     it 'com apenas Ano de Fabricação em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
                                                                 domain_of_emails: '@oi.com.br', billing_address: 'Avenida da Fatura', 
                                                                 cnpj: '76535764000143', status: 'active')

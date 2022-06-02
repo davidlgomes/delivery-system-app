@@ -2,11 +2,12 @@ require 'rails_helper'
 
 describe 'Usuário Cadastra um Preço' do
     it 'com sucesso' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        login_adm(admin)
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        
         visit root_path
         click_on 'Preços'
         click_on 'Cadastrar Preços'
@@ -27,11 +28,12 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Preço Inicial: 5.0' 
     end
     it 'Com todos os dados em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
@@ -47,11 +49,12 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Preço' 
     end
     it 'com apenas Nome da oferta em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
@@ -67,11 +70,12 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Preço' 
     end
     it 'com apenas Volume em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
@@ -87,11 +91,12 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Preço' 
     end
     it 'com apenas Peso em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
@@ -107,11 +112,12 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Preço' 
     end
     it 'com apenas Preço por Km em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
@@ -127,11 +133,12 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Preço' 
     end
     it 'com apenas Preço Inicial em branco' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
@@ -147,13 +154,14 @@ describe 'Usuário Cadastra um Preço' do
         expect(page).to have_content 'Não foi possível cadastrar o Preço' 
     end
     it 'com nome já cadastrado' do
-        usuario=User.create!(email:'gomes.david.912@gmail.com', password:'12t&$Te054')
-        login_as(usuario)
+        admin=Admin.create!(name:'David',email:'gomes@sistemadefrete.com.br', password:'12t&$Te054')
+        
         primeiro_carrier_management = CarrierManagement.create!(fancy_name: 'Oi', social_reason: 'Brasil Telecom S/A', 
             domain_of_emails: '@oi.com.br', billing_address: 'Avenida do Faturamento, 1000', 
             cnpj: '76535764000143', status: 'active')
         preço = DeliveryPrice.create!(smaller_volume: 300, larger_volume: 300, smaller_weight: 100, larger_weight: 100,
                                       km_price: 0.50, name: 'Oferta Teste', initial_price: 5, carrier_management:primeiro_carrier_management)
+        login_adm(admin)
         visit root_path
         click_on 'Preço'
         click_on 'Cadastrar Preços'
