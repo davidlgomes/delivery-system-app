@@ -1,0 +1,10 @@
+<h2>Editar veículo</h2>
+<%if(@vehicle_delivery.errors.any?)%>
+    <p> Verifique os erros abaixo:</p>
+    <ul>
+        <%@vehicle_delivery.errors.full_messages.each do |mensagem|%>
+            <li><%=mensagem%></li>
+        <%end%>
+    </ul>
+<%end%>
+<%=render 'form'%>

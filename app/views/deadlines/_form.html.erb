@@ -1,0 +1,26 @@
+<%= form_with(model: @deadline) do |formulario|%>
+    <div>
+        <%=formulario.label :minimum_distance%></br>
+        <%=formulario.text_field :minimum_distance%>
+    </div>
+    <div>
+        <%=formulario.label :maximum_distance%></br>
+        <%=formulario.text_field :maximum_distance%>
+    </div>
+    <div>
+        <%=formulario.label :minimum_of_days%></br>
+        <%=formulario.text_field :minimum_of_days%>
+    </div>
+    <div>
+        <%=formulario.label :days_delivery%></br>
+        <%=formulario.text_field :days_delivery%>
+    </div>
+    <div>
+        <%=formulario.label :carrier_management_id%></br>
+        <%=formulario.collection_select :carrier_management_id, @carrier_managements, :id, :fancy_name%>
+    </div>
+    </br>
+    <div>
+        <%=formulario.submit "Enviar"%>
+    </div>
+<%end%>

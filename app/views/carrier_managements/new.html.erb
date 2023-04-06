@@ -1,0 +1,10 @@
+<h1>Cadastrar Nova Transportadora</h1>
+<%if(@carrier_management.errors.any?)%>
+    <p> Verifique os erros abaixo:</p>
+    <ul>
+        <%@carrier_management.errors.full_messages.each do |mensagem|%>
+            <li><%=mensagem%></li>
+        <%end%>
+    </ul>
+<%end%>
+<%=render 'form'%>

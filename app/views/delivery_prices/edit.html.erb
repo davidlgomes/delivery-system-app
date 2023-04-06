@@ -1,0 +1,10 @@
+<h2>Editar Preço</h2>
+<%if(@delivery_price.errors.any?)%>
+    <p> Verifique os erros abaixo:</p>
+    <ul>
+        <%@delivery_price.errors.full_messages.each do |mensagem|%>
+            <li><%=mensagem%></li>
+        <%end%>
+    </ul>
+<%end%>
+<%=render 'form'%>

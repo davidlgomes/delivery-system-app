@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DeliverySystemApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+    <div id='input-output'>
+      <nav>
+        <%if user_signed_in?%> 
+          <%=current_user.email%></br>
+          <%= button_to 'Sair', destroy_user_session_path, method: :delete%>
+        <%elsif admin_signed_in?%>
+          <%=current_admin.email%></br>
+          <%=button_to 'Sair', destroy_admin_session_path, method: :delete%>
+        <%else%>
+          <%=link_to 'Entrar', new_user_session_path%> |
+          <%=link_to 'Entrar como Administrador', new_admin_session_path%>
+        <%end%>
+      </nav>
+    </div>
+    <div id="title">
+      <%=notice%></br>
+      <h1><%=link_to 'Sistema de Entrega', root_path%></h1></br>
+    </div>
+    <div id="page_all">
+      <%= yield %>
+    </div>
+  </body>
+</html>

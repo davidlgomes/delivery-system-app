@@ -1,0 +1,10 @@
+<h2>Edição de Prazos</h2>
+<%if(@deadline.errors.any?)%>
+    <p> Verifique os erros abaixo:</p>
+    <ul>
+        <%@deadline.errors.full_messages.each do |mensagem|%>
+            <li><%=mensagem%></li>
+        <%end%>
+    </ul>
+<%end%>
+<%=render 'form'%>

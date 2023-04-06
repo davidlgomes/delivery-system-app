@@ -1,0 +1,13 @@
+<h2><%=@carrier_management.fancy_name%></br></h2>
+<%if @carrier_management!=nil%>
+    Nome Fantasia: <%=@carrier_management.fancy_name%></br>
+    Razão Social: <%=@carrier_management.social_reason%></br>
+    Domínio de e-mail: <%=@carrier_management.domain_of_emails%></br>
+    CNPJ: <%=@carrier_management.cnpj%></br>
+    Endereço para Faturamento: <%=@carrier_management.billing_address%></br>
+    Status: <%=@carrier_management.status%></br>
+<%end%>
+<%=link_to "Editar", edit_carrier_management_path(@carrier_management.id)%>
+<%=button_to "Apagar",  carrier_management_path(@carrier_management.id), method: :delete%></br></br></br>
+<%=link_to "Cadastrar novo veículo", new_vehicle_delivery_path%>
+<%link_to "Ver todos os veículos dessa transportadora", vehicle_deliveries_path%>

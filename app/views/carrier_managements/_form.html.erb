@@ -1,0 +1,31 @@
+
+<%= form_with(model: @carrier_management) do |formulario|%>
+    <div>
+        <%=formulario.label :fancy_name%></br>
+        <%=formulario.text_field :fancy_name%>
+    </div>
+    <div>
+        <%=formulario.label :social_reason%></br>
+        <%=formulario.text_field :social_reason%>
+    </div>
+    <div>
+        <%=formulario.label :domain_of_emails%></br>
+        <%=formulario.text_field :domain_of_emails%>
+    </div>
+    <div>
+        <%=formulario.label :cnpj, "CNPJ(somente números)"%></br>
+        <%=formulario.text_field :cnpj%>
+    </div>
+    <div>
+        <%=formulario.label :billing_address%></br>
+        <%=formulario.text_field :billing_address%>
+    </div>
+    <div>
+        <%=formulario.label :status, "Status"%></br>
+        <%= formulario.select(:status, options_for_select([['Inactive', 'inactive'], ['Active', 'active']], :selected => params[:status])) %>
+    </div>
+    </br>
+    <div>
+        <%=formulario.submit "Enviar"%>
+    </div>
+<%end%>

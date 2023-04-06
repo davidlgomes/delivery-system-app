@@ -1,0 +1,4 @@
+<%=link_to('Cadastrar Prazos', new_deadline_path)%></br>
+<%@deadlines.each do |deadline|%>
+<%=link_to "#{deadline.minimum_distance} até #{deadline.maximum_distance}", deadline_path(deadline.id)%></br>
+<%end%>

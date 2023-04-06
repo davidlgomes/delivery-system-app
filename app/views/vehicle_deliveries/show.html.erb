@@ -1,0 +1,10 @@
+<h2><%=@vehicle_delivery.vehicle_plate%></h2></br>
+Placa do Veículo: <%=@vehicle_delivery.vehicle_plate %></br>
+Marca: <%= @vehicle_delivery.brand_vehicle  %></br>
+Ano de Fabricação: <%=@vehicle_delivery.year_of_manufacture  %></br>
+Modelo: <%=@vehicle_delivery.model_vehicle %></br>
+Capacidade Máxima de Carga: <%=@vehicle_delivery.maximum_load_capacity  %></br>
+<%=@vehicle_delivery.carrier_management.fancy_name %></br>
+<%=link_to "Editar", edit_vehicle_delivery_path(@vehicle_delivery.id)%>
+<%=button_to "Apagar",  vehicle_delivery_path(@vehicle_delivery.id), method: :delete%>
+

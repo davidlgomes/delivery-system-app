@@ -1,0 +1,10 @@
+<h2>Preços</h2>
+<%=link_to('Voltar', delivery_prices_path)%>
+<%=link_to "Editar", edit_delivery_price_path(@delivery_price.id)%>
+<%=button_to "Apagar",  delivery_price_path(@delivery_price.id), method: :delete%></br>
+
+Nome: <%=@delivery_price.name %></br>
+Volume: <%=@delivery_price.smaller_volume %> até <%=@delivery_price.larger_volume %></br>
+Peso: <%= @delivery_price.smaller_weight  %> até <%= @delivery_price.larger_weight  %></br>
+Preço por Km: <%=@delivery_price.km_price  %></br>
+Preço Inicial: <%=@delivery_price.initial_price %></br>

@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models: 
+      carrier_management: Gestão de Transportadora
+    attributes:
+      carrier_management:
+        fancy_name: "Nome Fantasia"
+        social_reason: "Razão Social"
+        domain_of_emails: "Domínio de E-mails"
+        cnpj: "CNPJ"
+        Cnpj: "CNPJ"
+        billing_address: "Endereço para Faturamento"
+        Active: "Ativo"
+        Inactive: "Inativo" 
+        

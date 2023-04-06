@@ -1,0 +1,39 @@
+<h1>Cadastro de Preços</h1>
+<%= form_with(model: @delivery_price) do |formulario|%>
+    <div>
+        <%=formulario.label :name%></br>
+        <%=formulario.text_field :name%>
+    </div>
+    <div>
+        <%=formulario.label :smaller_volume%></br>
+        <%=formulario.number_field :smaller_volume, step:0.01%>
+    </div>
+    <div>
+        <%=formulario.label :larger_volume%></br>
+        <%=formulario.number_field :larger_volume, step:0.01%>
+    </div>
+    <div>
+        <%=formulario.label :smaller_weight%></br>
+        <%=formulario.number_field :smaller_weight, step:0.01%>
+    </div>
+    <div>
+        <%=formulario.label :larger_weight%></br>
+        <%=formulario.number_field :larger_weight, step:0.01%>
+    </div>
+    <div>
+        <%=formulario.label :km_price%></br>
+        <%=formulario.number_field :km_price, step:0.01 %>
+    </div>
+    <div>
+        <%=formulario.label :initial_price%></br>
+        <%=formulario.number_field :initial_price, step:0.01 %>
+    </div>
+    <div>
+        <%=formulario.label :carrier_management_id%></br>
+        <%=formulario.collection_select :carrier_management_id, @carrier_managements, :id, :fancy_name%>
+    </div>
+    </br>
+    <div>
+        <%=formulario.submit "Enviar"%>
+    </div>
+<%end%>

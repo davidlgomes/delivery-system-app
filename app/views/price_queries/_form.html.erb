@@ -1,0 +1,18 @@
+<%= form_with(model: @price_query) do |formulario|%>
+    <div>
+        <%=formulario.label :volume_query%></br>
+        <%=formulario.text_field :volume_query%>
+    </div>
+    <div>
+        <%=formulario.label :weight_query%></br>
+        <%=formulario.text_field :weight_query%>
+    </div>
+    <div>
+        <%=formulario.label :distance_query%></br>
+        <%=formulario.text_field :distance_query%>
+    </div>
+    </br>
+    <div>
+        <%=formulario.submit "Enviar"%>
+    </div>
+<%end%>

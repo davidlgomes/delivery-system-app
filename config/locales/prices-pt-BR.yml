@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models: 
+      delivery_price: Preços de Delivery
+    attributes:
+      delivery_price:
+        name: "Nome da Oferta"
+        smaller_volume: "Volume Menor"
+        larger_volume: "Volume Maior"
+        smaller_weight: "Peso Menor"
+        larger_weight: "Peso Maior"
+        km_price: "Preço por Km"
+        initial_price: "Preço Inicial"
+        carrier_management_id: "Transportadora"

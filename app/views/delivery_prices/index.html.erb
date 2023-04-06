@@ -1,0 +1,5 @@
+<h2>Preços</h2></br>
+<%=link_to('Cadastrar Preços', new_delivery_price_path)%></br>
+<%@delivery_prices.each do |price|%>
+<%=link_to price.name, delivery_price_path(price.id)%></br>
+<%end%>

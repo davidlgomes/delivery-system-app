@@ -1,0 +1,11 @@
+<%=link_to 'Voltar', carrier_management_path(@carrier_management.id)%>
+<h2>Editar Transportadora</h2>
+<%if(@carrier_management.errors.any?)%>
+    <p> Verifique os erros abaixo:</p>
+    <ul>
+        <%@carrier_management.errors.full_messages.each do |mensagem|%>
+            <li><%=mensagem%></li>
+        <%end%>
+    </ul>
+<%end%>
+<%= render 'form'%>

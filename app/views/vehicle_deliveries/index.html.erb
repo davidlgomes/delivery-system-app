@@ -1,0 +1,9 @@
+<h2>Veículos de Delivery</h2>
+<%if @vehicle_deliveries.any?%>
+    <%@vehicle_deliveries.each do |vehicle|%>
+        <%=link_to vehicle.vehicle_plate, vehicle_delivery_path(vehicle.carrier_management_id)%></br>
+    <%end%>
+<%else%>
+    <p>Não existem Veículos cadastrados</p>
+<%end%>
+<%=link_to 'Cadastrar Novo Veículo', new_vehicle_delivery_path%>

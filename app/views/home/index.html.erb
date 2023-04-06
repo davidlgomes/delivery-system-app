@@ -1,0 +1,18 @@
+Acessado em: <%=I18n.localize(Date.today)%>
+<h2>Transportadoras</h2>
+<%=link_to('Cadastrar Transportadora', new_carrier_management_path)%> |
+<%=link_to('Veículo', vehicle_deliveries_path)%> |
+<%=link_to('Preços', delivery_prices_path)%> |
+<%=link_to('Prazos', deadlines_path)%> |
+</br></br>
+<%if @carrier_managements.empty?%>
+    <p>Não existem galpões cadastrados</p>
+<%end%>
+<%@carrier_managements.each do |carrier| %>
+  <%=link_to(carrier.fancy_name, carrier_management_path(carrier.id))%></br>
+  Razão Social: <%=carrier.social_reason%></br>
+  Domínio de E-mails: <%=carrier.domain_of_emails%></br>
+  CNPJ: <%=carrier.cnpj%></br>
+  Endereço para Faturamento: <%=carrier.billing_address%></br>
+  Status: <%=carrier.status%></br>
+<% end %>
