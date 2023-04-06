@@ -25,14 +25,14 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
   gem "capybara"
-  gem 'pg', '0.12.2'
+  gem 'pg', '1.4.5'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'pg', '0.12.2'
+  gem 'pg', '1.4.5'
 end
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg', '1.4.5'
 end
