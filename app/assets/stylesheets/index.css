@@ -1,0 +1,24 @@
+/* Adicione esses estilos no seu arquivo CSS */
+
+/* Estilos para a imagem */
+.logo-container {
+    margin-bottom: 20px; /* Adiciona espaço entre a imagem e os botões */
+  }
+  
+  /* Estilos para os botões */
+  .button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Adiciona espaço entre os botões */
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
