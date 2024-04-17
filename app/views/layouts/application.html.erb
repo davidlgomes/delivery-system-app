@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-x6uD+gvteZT4TXJt4H/ju7eaiKtTO0XLv9a2mYp63TEmuWmOtTv4ZPn7OlgmL+cW" crossorigin="anonymous">
     <title>DeliverySystemApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application" %>
+    
+    <%= stylesheet_link_tag "applicationStyle", "index", "newConfirmationDevise" %>
+    <!-- Adicionando Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
   <body>
-    <div id='input-output'>
-      <nav>
-        <%if user_signed_in?%> 
-          <%=current_user.email%></br>
-          <%= button_to 'Sair', destroy_user_session_path, method: :delete%>
-        <%elsif admin_signed_in?%>
-          <%=current_admin.email%></br>
-          <%=button_to 'Sair', destroy_admin_session_path, method: :delete%>
-        <%else%>
-          <%=link_to 'Entrar', new_user_session_path%> |
-          <%=link_to 'Entrar como Administrador', new_admin_session_path%>
-        <%end%>
-      </nav>
-    </div>
-    <div id="title">
-      <%=notice%></br>
-      <h1><%=link_to 'Sistema de Entrega', root_path%></h1></br>
-    </div>
-    <div id="page_all">
+    <nav class="navbar navbar-dark bg-dark custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="<%= root_path %>">
+          <%= image_tag("logo.png", alt: "Logo", class: "rounded-circle", width:"100px") %>
+        </a>
+        <% if user_signed_in? || admin_signed_in? %>
+          <div class="ml-auto">
+            <span class="text-white mr-3">
+              <strong>
+                <%= current_user.email if user_signed_in? %>
+                <%= current_admin.email if admin_signed_in? %>
+              </strong>
+            </span>
+            <%= button_to 'Sair', destroy_user_session_path, method: :delete, class: "btn btn-danger custom-btn" if user_signed_in? %>
+            <%= button_to 'Sair', destroy_admin_session_path, method: :delete, class: "btn btn-danger custom-btn" if admin_signed_in? %>
+          </div>
+        <% else %>
+          <div class="ml-auto">
+            <%= link_to 'Entrar', new_user_session_path, class: "btn btn-primary custom-btn" %>
+            <%= link_to 'Entrar como Administrador', new_admin_session_path, class: "btn btn-secondary custom-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+    <div id="page_all" class="container mt-3">
       <%= yield %>
     </div>
   </body>

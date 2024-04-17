@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_05_31_140728) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -43,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_140728) do
     t.integer "minimum_of_days"
     t.float "minimum_distance"
     t.float "maximum_distance"
-    t.integer "carrier_management_id", null: false
+    t.bigint "carrier_management_id", null: false
     t.index ["carrier_management_id"], name: "index_deadlines_on_carrier_management_id"
   end
 
@@ -57,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_140728) do
     t.float "larger_volume"
     t.float "larger_weight"
     t.float "smaller_weight"
-    t.integer "carrier_management_id", default: 0, null: false
+    t.bigint "carrier_management_id", default: 0, null: false
     t.index ["carrier_management_id"], name: "index_delivery_prices_on_carrier_management_id"
   end
 
@@ -100,7 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_140728) do
     t.string "maximum_load_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "carrier_management_id", null: false
+    t.bigint "carrier_management_id", null: false
     t.integer "year_of_manufacture"
     t.index ["carrier_management_id"], name: "index_vehicle_deliveries_on_carrier_management_id"
   end
