@@ -1,4 +1,5 @@
 # exit on error
+bundle update --ruby
 set -o errexit
 
 bundle update --ruby
