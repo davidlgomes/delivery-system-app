@@ -8,6 +8,8 @@ bundle update --ruby
 # Atualizar todas as gems, incluindo o gem 'debug' e suas dependências
 bundle update
 
+bundle config --delete cache_all
+
 # Instalar as gems, garantindo que todas as dependências sejam baixadas
 bundle install --full-index
 
