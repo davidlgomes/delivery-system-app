@@ -1,11 +1,21 @@
-# exit on error
-bundle update --ruby
+
+#!/bin/bash
 set -o errexit
 
+# Atualizar o Ruby e as gems
 bundle update --ruby
+
+# Atualizar todas as gems, incluindo o gem 'debug' e suas dependências
+bundle update
+
+# Instalar as gems, garantindo que todas as dependências sejam baixadas
 bundle install --full-index
+
+# Compilar os assets
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
+
+# Executar as migrações do banco de dados
 bundle exec rails db:migrate
 
 #if you have seeds to run add:
