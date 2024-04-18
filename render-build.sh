@@ -9,7 +9,7 @@ bundle update --ruby
 
 bundle config --delete cache_all
 
-bundle config set frozen false
+#bundle config set frozen false
 bundle update
 # Instalar as gems, garantindo que todas as dependências sejam baixadas
 bundle install --full-index
