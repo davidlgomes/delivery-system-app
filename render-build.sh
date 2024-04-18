@@ -3,7 +3,7 @@ bundle update --ruby
 set -o errexit
 
 bundle update --ruby
-bundle install
+bundle install --full-index
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
 bundle exec rails db:migrate
