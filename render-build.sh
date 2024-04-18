@@ -1,5 +1,3 @@
-
-#!/bin/bash
 set -o errexit
 
 # Atualizar o Ruby e as gems
@@ -22,6 +20,3 @@ bundle exec rails assets:clean
 
 # Executar as migrações do banco de dados
 bundle exec rails db:migrate
-
-#if you have seeds to run add:
-# bundle exec rails db:seed
