@@ -10,6 +10,8 @@ bundle update
 
 bundle config --delete cache_all
 
+bundle config set frozen false
+
 # Instalar as gems, garantindo que todas as dependências sejam baixadas
 bundle install --full-index
 
