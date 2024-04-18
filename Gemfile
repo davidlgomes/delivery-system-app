@@ -20,18 +20,18 @@ gem "validates_cpf_cnpj"
 gem 'bootstrap-sass'
 gem "devise"
 gem 'sqlite3'
+gem 'pg'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
   gem "capybara"
-  gem 'pg', '1.4.5'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'pg', '1.4.5'
+  
 end
 group :production do
   gem 'pg', '1.4.5'
