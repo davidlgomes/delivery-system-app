@@ -2,15 +2,15 @@ set -o errexit
 
 # Atualizar o Ruby e as gems
 gem install bundler
+bundle install --binstubs
 bundle update --ruby
 
 # Atualizar todas as gems, incluindo o gem 'debug' e suas dependências
-bundle update
 
 bundle config --delete cache_all
 
 bundle config set frozen false
-
+bundle update
 # Instalar as gems, garantindo que todas as dependências sejam baixadas
 bundle install --full-index
 
