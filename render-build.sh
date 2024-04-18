@@ -3,6 +3,7 @@
 set -o errexit
 
 # Atualizar o Ruby e as gems
+gem install bundler
 bundle update --ruby
 
 # Atualizar todas as gems, incluindo o gem 'debug' e suas dependências
