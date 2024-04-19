@@ -1,7 +1,6 @@
 set -o errexit
 
 # Atualizar o Ruby e as gems
-gem install bundler
 bundle install --binstubs
 bundle update --ruby
 
