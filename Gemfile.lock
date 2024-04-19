@@ -216,7 +216,7 @@ DEPENDENCIES
   capybara
   debug
   devise
-  pg (~> 1.5.6)
+  pg
   puma (~> 5.0)
   rails (~> 7.0.3)
   rspec-rails
