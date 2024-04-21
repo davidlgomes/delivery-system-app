@@ -71,8 +71,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_cable.url = 'https://delivery-system-app.onrender.com' # Substitua 'example.com' pelo seu domínio
-config.action_cable.allowed_request_origins = [ 'https://delivery-system-app.onrender.com', /http:\/\/example.*/ ] # Substitua 'example.com' pelo seu domínio
+  Rails.application.config.action_cable.url = 'https://delivery-system-app.onrender.com' # Substitua 'example.com' pelo seu domínio
+  Rails.application.config.action_cable.allowed_request_origins = [ 'https://delivery-system-app.onrender.com', /http:\/\/example.*/ ] # Substitua 'example.com' pelo seu domínio
 end
 # config/environments/production.rb
 
