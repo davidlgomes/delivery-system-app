@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "delivery-system-app-production.up.railway.app"
+  #config.hosts << "delivery-system-app-production.up.railway.app"
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -20,7 +20,7 @@ Rails.application.configure do
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
- # Disable serving static files from the `/public` folder by default since
+  # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
   # Compress CSS using a preprocessor.
@@ -71,10 +71,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  Rails.application.config.action_cable.url = 'https://delivery-system-app.onrender.com' # Substitua 'example.com' pelo seu domínio
-  Rails.application.config.action_cable.allowed_request_origins = [ 'https://delivery-system-app.onrender.com', /http:\/\/example.*/ ] # Substitua 'example.com' pelo seu domínio
+
+  # Configuração do Action Cable
+  config.action_cable.url = 'wss://delivery-system-app.onrender.com/cable' # URL do WebSocket
+  config.action_cable.allowed_request_origins = [ 'https://delivery-system-app.onrender.com' ] # Origens permitidas para WebSocket
 end
-# config/environments/production.rb
-
-
-
