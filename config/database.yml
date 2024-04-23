@@ -81,6 +81,10 @@ test:
 #
 production:
   <<: *default
-  database: delivery_system_app_main_production
-  username: delivery_system_app_main
+  adapter: postgresql
+  encoding: unicode
+  host: dpg-coh4lt7sc6pc73agg630-a
+  port: 5432
+  database: delivery_system_app_main_development
+  username: davidlgomes
   password: <%= ENV["DELIVERY_SYSTEM_APP_MAIN_DATABASE_PASSWORD"] %>
