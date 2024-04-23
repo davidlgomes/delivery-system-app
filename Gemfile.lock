@@ -242,6 +242,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actioncable (~> 7.0.0)
   bootstrap-sass
   capybara
   debug
