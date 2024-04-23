@@ -11,7 +11,7 @@ gem "sprockets-rails"
 
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 5.6.8"
 gem 'actioncable', '~> 7.0.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
