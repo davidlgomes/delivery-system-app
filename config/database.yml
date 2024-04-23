@@ -87,4 +87,4 @@ production:
   port: 5432
   database: delivery_system_app_main_development
   username: davidlgomes
-  password: <%= ENV["DELIVERY_SYSTEM_APP_MAIN_DATABASE_PASSWORD"] %>
+  password: nfqVuKfyiOhPFyAYh9t5Cz0gpdbZpsXH
